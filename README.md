@@ -30,6 +30,53 @@ OmicScope is designed to be installed locally so you can analyze your own privat
 Clone the repository and install the package in editable mode:
 
 ```bash
-git clone [https://github.com/AkuSax/OmicScope.git](https://github.com/AkuSax/OmicScope.git)
+git clone [https://github.com/YOUR_USERNAME/OmicScope.git](https://github.com/YOUR_USERNAME/OmicScope.git)
 cd OmicScope
 pip install -e .
+````
+
+### 2\. Running on Your Data
+
+You can use OmicScope directly within a Python script or Jupyter Notebook. It accepts any standard `Scanpy` AnnData object.
+
+```python
+import scanpy as sc
+import omicscope
+
+# 1. Load your data
+adata = sc.read_h5ad("my_tumor_sample.h5ad")
+
+# 2. Launch the dashboard
+omicscope.view(adata)
+```
+
+*The dashboard will start locally at `http://127.0.0.1:8050`.*
+
+-----
+
+## 🏗️ Architecture
+
+OmicScope uses a "dual-mode" architecture to support both lightweight web deployment and robust local analysis:
+
+| Feature | **CLI Mode** (Local) | **Web Mode** (Demo) |
+| :--- | :--- | :--- |
+| **Data Input** | Live `AnnData` object in memory | Pre-computed `.parquet` file |
+| **Computation** | Real-time (Scanpy) | Pre-calculated (Pandas) |
+| **Use Case** | Research & Analysis | Public Portfolio Demo |
+
+-----
+
+## 📁 Repository Structure
+
+  * `omicscope/`: Core package source code.
+      * `core.py`: Main Dash application logic and callbacks.
+  * `web_demo/`: Scripts specifically for the Heroku deployment.
+      * `app.py`: Entry point that loads the demo parquet file.
+  * `scripts/`: Utilities for data preparation.
+      * `preprocess.py`: Converts raw 10x datasets into lightweight parquet files for the web demo.
+
+-----
+
+## 🧬 Data Source
+
+The demo dataset is the **Human Lymph Node** Spatial Gene Expression dataset provided by 10x Genomics.
