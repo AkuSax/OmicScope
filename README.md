@@ -6,6 +6,10 @@
 
 **OmicScope** is a lightweight, interactive dashboard for exploring Spatial Transcriptomics data. It bridges the gap between complex molecular matrices and intuitive visual analysis, allowing researchers to explore gene expression in the context of tissue histology.
 
+<p align="center">
+  <img src="assets/demo.gif" alt="OmicScope Demo" width="800">
+</p>
+
 ### 🚀 [Try the Live Demo](https://omicscope.akulsaxena.me)
 *See the tool in action on a human lymph node dataset.*
 
@@ -18,7 +22,7 @@ OmicScope is designed to be installed locally, allowing you to analyze your own 
 Clone the repository and install it in editable mode:
 
 ```bash
-git clone [https://github.com/YOUR_USERNAME/OmicScope.git](https://github.com/YOUR_USERNAME/OmicScope.git)
+git clone [https://github.com/AkuSax/OmicScope.git](https://github.com/AkuSax/OmicScope.git)
 cd OmicScope
 pip install -e .
 ````
