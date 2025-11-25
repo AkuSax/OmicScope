@@ -17,7 +17,7 @@
 
 ## 📦 Installation
 
-OmicScope is designed to be installed locally, allowing you to analyze your own private **Scanpy** datasets without uploading sensitive data to the cloud.
+OmicScope is designed to be installed locally, allowing you to analyze your own private **Scanpy** datasets.
 
 Clone the repository and install it in editable mode:
 
