@@ -6,33 +6,20 @@ from tqdm import tqdm
 import warnings
 from PIL import Image
 
-# Suppress minor warnings for cleaner output
 warnings.filterwarnings("ignore")
 
 def preprocess_and_export(output_dir="web_demo/data"):
     """
-    Exports data AND the histology image.
-    Crucially, it scales the spot coordinates to match the image pixels.
+    Exports data and the histology image. 
+    Scales the spot coordinates to match the image pixels.
     """
-    # 1. Set Scanpy verbosity to 3
     sc.settings.verbosity = 3
-    
-    print("--- STEP 1: LOADING DATA ---")
-    print("Downloading/Loading Visium dataset (V1_Human_Lymph_Node)...")
-    
-    if os.path.exists("./data/V1_Human_Lymph_Node"):
-        print("Found local cache.")
     
     # Load dataset
     adata = sc.datasets.visium_sge(sample_id="V1_Human_Lymph_Node")
     adata.var_names_make_unique()
-    print(f"Loaded successfully: {adata.shape[0]} cells, {adata.shape[1]} genes.")
-
-    print("\n--- STEP 2: EXTRACTING IMAGE ---")
-    # Get the library ID (the internal key Scanpy uses)
     lib_id = list(adata.uns['spatial'].keys())[0]
     
-    # Get the high-res image and the scale factor
     hires_image = adata.uns['spatial'][lib_id]['images']['hires']
     scale_factor = adata.uns['spatial'][lib_id]['scalefactors']['tissue_hires_scalef']
     
