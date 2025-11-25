@@ -30,6 +30,6 @@ OmicScope is designed to be installed locally so you can analyze your own privat
 Clone the repository and install the package in editable mode:
 
 ```bash
-git clone [https://github.com/YOUR_USERNAME/OmicScope.git](https://github.com/YOUR_USERNAME/OmicScope.git)
+git clone [https://github.com/AkuSax/OmicScope.git](https://github.com/AkuSax/OmicScope.git)
 cd OmicScope
 pip install -e .
