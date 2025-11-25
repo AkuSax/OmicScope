@@ -1,0 +1,20 @@
+name: omicscope
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9
+  - pip
+  - pandas
+  - numpy
+  - scipy
+  - python-igraph
+  - leidenalg
+  - pyarrow
+  - gunicorn
+  - pip:
+    - scanpy
+    - dash
+    - dash-bootstrap-components
+    - plotly
+    - tqdm

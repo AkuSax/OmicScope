@@ -1,0 +1,9 @@
+data/
+__pycache__/
+*.pyc
+.DS_Store
+.env
+venv/
+omicscope_env/
+
+!web_demo/data/
