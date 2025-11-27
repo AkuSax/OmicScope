@@ -10,7 +10,7 @@
   <img src="assets/demo.gif" alt="OmicScope Demo" width="800">
 </p>
 
-### 🚀 [Try the Live Demo](https://omicscope.akulsaxena.me)
+### 🚀 [Try the Live Demo](http://omicscope.akulsaxena.me)
 *See the tool in action on a human lymph node dataset.*
 
 ---
